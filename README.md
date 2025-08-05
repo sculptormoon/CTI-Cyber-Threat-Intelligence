@@ -36,4 +36,65 @@ Algumas das perguntas que gosto de me fazer em alguns incidentes para coletar e 
 - Qual técnica foi aplicada? (movimentação lateral?, exfiltração?)
 
 
+Bom então vamos dar a situação que estamos com um incidente em mãos mas não temos o usuario que fez isso, pois uma coisa comum em situações de um ataque é o escalonamento de privilegio e bom você viu o incidente e após analisar viu que tudo está sendo feito pelo usuario root, bom já um dos EDRs mais usados no mundo é o Falcon, vamos dar um exemplo que estamos em um ambiente que utiliza Falcon então eu gosto de iniciar com uma query para analisar os ultimos logons feitos no host
+
+## Logons
+```text
+#event_simpleName=UserLogon
+| UserUUID:=UserSid | UserUUID:=UID
+| groupBy([aid], function=([selectFromMax(field="@timestamp", include=[ComputerName, UserUUID, UserName, LogonType, @timestamp])]))
+| $falcon/helper:enrich(field=LogonType)
+| aid=~match(file="aid_master_main.csv", column=[aid])
+```
+
+Bom após analisar os Logons e ter feito a coleta dos mesmo gosto de analisar as commandlines
+
+## Host Linux - Last commands removing other tools from path (+clean)
+```text
+#event_simpleName="*Process*"
+| aid=?aid
+| CommandLine=?CommandLine
+| (ImageFileName!=*CrowdStrike*) AND (ImageFileName!=*guardicore*) //Paths to exclude from filter
+| UserName!=zabbix* //User to exclude from filter
+| table([@timestamp, UserName, ImageFileName, CommandLine, SHA256HashData, #event_simpleName], limit=1000)
+```
+
+Bom após analisar as commandlines muitas vezes estaremos munidos de informações, e agora teremos de fazer o filtro e separar quais informações são relevantes ou não, por isso em minha query eu já as vezes descarto alguns usuarios, como por exemplo em minha query acima descartei o user zabbix, mas você deve levar em consideração que o fato disso é apenas para que o filtro fique mais limpo, mas o que lhe garante que o user "zabbix" não tenha sido comprometido? então você deve ter muito cuidado ao aplicar filtros.
+
+Outra coisa que gosto de fazer é validar as comunicações do host que estou investigando com ambientes externos para isso uso a seguinte query
+
+## Connections to External Addresses
+```text
+#event_simpleName=NetworkConnect*
+| aid=?aid
+| RemotePort=?RemotePort
+| !cidr(RemoteAddressIP4, subnet=["224.0.0.0/4", "10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16", "127.0.0.0/8", "169.254.0.0/16", "0.0.0.0/32"])
+| table([ComputerName, LocalAddressIP4, LocalPort, RemoteAddressIP4, RemotePort, @timestamp], limit=1000)
+```
+
+Então digamos que bom tenho o IP em mãos que foi o ator malicioso e tenho as execuções aplicadas e eu quero ver todas as ações daquele IP no Host que foi o alvo então usarei uma das querys abaixo
+
+## Activities of an IP on the Host
+```text
+#event_simpleName=Network* AND RemoteAddressIP4=
+| aid=?aid
+```
+//OR
+```text
+#event_simpleName=Network* AND RemoteIP=*
+| aid=?aid
+| table(fields = [ComputerName, #event_simpleName, ContextBaseFileName, RemoteIP, RemotePort, LocalIP, LocalPort, ConnectionDirection, @timestamp])
+```
+
+Bom então dei um exemplo simples acima para que você saiba como iniciar sua investigação sobre um caso, mas cada caso tem um nivel de complexibilidade e alguns mais complexibilidade outros menos, alguns podem ser resolvidos em apenas algumas horas alguns podem levar dias ou meses, e sua corrida é contra o tempo.
+
+Neste repositorio deixei um pasta onde tem algumas querys do CS Falcon que podem ser uteis em suas investigações [Querys Falcon](FALCON-queries.md)
+
+Aqui também vai um repositorio que contem mais de 170 ferramentas para consultas de IPs, Hash, IOC, grupos e outros auxiliares nas suas investigações como auxiliares para identificar grupos APT, ou rastreamento de blockchain etc... 🔗 [Repositorio com diversas ferramentas para auxiliares](https://github.com/sculptormoon/blue-team-auxiliary)
+
+Bom em meu perfil a diversos repositorio que podem ser uteis em suas investigações como repositorios voltados a analise de malware e outros.
+
+Esse repositorio trata-se de um pequeno contexto sobre CTI, pois como informei lá em cima CTI é um assunto complexo e para você ser um bom profissional de CTI deve dominar varias tecnicas como reverse malware, analise de phishing, conhecimento profundo sobre ferramentas de ataque, comprensão sobre questões comportamentais voltadas a ataque e espionagem, então espero que esse repositorio possa lhe ajudar a se guiar para se tornar um bom analista de CTI.
+
+
 
