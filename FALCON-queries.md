@@ -1,14 +1,16 @@
 //Host Linux - Last commands removing other tools from path (+clean)
+```text
 #event_simpleName="*Process*"
 | aid=?aid
 | CommandLine=?CommandLine
 | (ImageFileName!=*CrowdStrike*) AND (ImageFileName!=*guardicore*) //Paths to exclude from filter
 | UserName!=zabbix* //User to exclude from filter
 | table([@timestamp, UserName, ImageFileName, CommandLine, SHA256HashData, #event_simpleName], limit=1000)
-
+```
 
 
 //Host Windows - Last commands
+```text
 #event_simpleName=*Process*
 OR #event_simpleName=CommandHistory
 | aid=?aid
@@ -17,22 +19,24 @@ OR #event_simpleName=CommandHistory
 | CommandLine=*
 | table([@timestamp, #event_simpleName, UserName, ParentBaseFileName, FileName, CommandLine, ImageFileName, SHA256HashData, ComputerName], limit=10000)
 | rename(FileName, as="Main Process") | rename(CommandLine, as="Command Line") | rename(ImageFileName, as="FilePath") | rename(SHA256HashData, as="File Hash") | rename(ParentBaseFileName, as="Related Process") | rename(UserName, as="User")
-
+```
 
 
 //DNS Requests Made by a Host
+```text
 #event_simpleName=DnsRequest
 | aid=?aid
 | groupBy([ComputerName, DomainName], limit=max)
-
+```
 
 //Connections to External Addresses
+```text
 #event_simpleName=NetworkConnect*
 | aid=?aid
 | RemotePort=?RemotePort
 | !cidr(RemoteAddressIP4, subnet=["224.0.0.0/4", "10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16", "127.0.0.0/8", "169.254.0.0/16", "0.0.0.0/32"])
 | table([ComputerName, LocalAddressIP4, LocalPort, RemoteAddressIP4, RemotePort, @timestamp], limit=1000)
-
+```
 
 //Activities of an IP on the Host
 #event_simpleName=Network* AND RemoteAddressIP4=
