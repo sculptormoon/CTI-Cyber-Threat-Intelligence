@@ -48,7 +48,7 @@ OR #event_simpleName=CommandHistory
 //OR
 ```text
 #event_simpleName=Network* AND RemoteIP=*
-| aid=AGENT-ID
+| aid=?aid
 | table(fields = [ComputerName, #event_simpleName, ContextBaseFileName, RemoteIP, RemotePort, LocalIP, LocalPort, ConnectionDirection, @timestamp])
 ```
 
@@ -232,6 +232,7 @@ aid=?aid AND #event_simpleName="*Logon*" | table([#event_simpleName, UserName, R
 
 ## Last Logons
 ```text
+#event_simpleName=UserLogon
 aid=?aid
 | #event_simpleName=UserLogon
 | $falcon/helper:enrich(field=LogonType)
