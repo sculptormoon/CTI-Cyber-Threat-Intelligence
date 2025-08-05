@@ -16,7 +16,7 @@ Esse exemplo reforça uma lição vital para quem atua com Threat Hunting: quant
 Algumas das perguntas que gosto de me fazer em alguns incidentes é o seguinte
 
 ### Quem?
-- Usuario envolvido, nome ou ID
+- Nome, usuario ou ID
 - Responsavél como por exemplo após identificar o tipo de comportamento do ataque entender se pertence a algum grupo de ameaça conhecido
 
 ### Quando?
