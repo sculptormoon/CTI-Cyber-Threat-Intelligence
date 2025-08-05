@@ -90,7 +90,7 @@ Bom então dei um exemplo simples acima para que você saiba como iniciar sua in
 
 Neste repositorio deixei um pasta onde tem algumas querys do CS Falcon que podem ser uteis em suas investigações [Querys Falcon](FALCON-queries.md)
 
-Aqui também vai um repositorio que contem mais de 170 ferramentas para consultas de IPs, Hash, IOC, grupos e outros auxiliares nas suas investigações como auxiliares para identificar grupos APT, ou rastreamento de blockchain etc... 🔗 [Repositorio com diversas ferramentas para auxiliares](https://github.com/sculptormoon/blue-team-auxiliary)
+Aqui também vai um repositorio que contem mais de 170 ferramentas para consultas de IPs, Hash, IOC, grupos e outros auxiliares nas suas investigações como auxiliares para identificar grupos APT, ou rastreamento de blockchain etc... 🔗 [Repositorio com ferramentas auxiliares](https://github.com/sculptormoon/blue-team-auxiliary)
 
 Bom em meu perfil a diversos repositorio que podem ser uteis em suas investigações como repositorios voltados a analise de malware e outros.
 
