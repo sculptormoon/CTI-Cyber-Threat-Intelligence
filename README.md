@@ -94,7 +94,7 @@ Aqui também vai um repositorio que contem mais de 170 ferramentas para consulta
 
 Bom em meu perfil a diversos repositorio que podem ser uteis em suas investigações como repositorios voltados a analise de malware e outros.
 
-Esse repositorio trata-se de um pequeno contexto sobre CTI, pois como informei lá em cima CTI é um assunto complexo e para você ser um bom profissional de CTI deve dominar varias tecnicas como reverse malware, analise de phishing, conhecimento profundo sobre ferramentas de ataque, comprensão sobre questões comportamentais voltadas a ataque e espionagem, então espero que esse repositorio possa lhe ajudar a se guiar para se tornar um bom analista de CTI.
+Esse repositorio trata-se de um pequeno contexto sobre CTI, pois como informei lá em cima CTI é um assunto complexo e para você ser um bom profissional de CTI deve dominar varias tecnicas como engenharia reversa, técnicas de forense, conhecimento profundo sobre metodologias de ataque, comprensão sobre questões comportamentais voltadas a ataque e espionagem, então espero que esse repositorio possa lhe ajudar a se guiar para se tornar um bom analista de CTI.
 
 
 
