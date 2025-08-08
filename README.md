@@ -99,5 +99,14 @@ Bom em meu perfil a diversos repositorio que podem ser uteis em suas investigaç
 Esse repositorio trata-se de um pequeno contexto sobre CTI, pois como informei lá em cima CTI é um assunto complexo e para você ser um bom profissional de CTI deve dominar varias tecnicas como engenharia reversa, técnicas de forense, conhecimento profundo sobre metodologias de ataque, comprensão sobre questões comportamentais voltadas a ataque e espionagem, então espero que esse repositorio possa lhe ajudar a se guiar para se tornar um bom analista de CTI.
 
 
+## License
+
+This repository is licensed under the MIT License. The license covers the content of this repository, which consists of links and related information. See the [LICENSE](LICENSE) file for more details.
+
+## Author
+### Lucas Benites.
+
+## Contact
+If you have any questions or need more information, feel free to contact me through my GitHub profile [perfil GitHub](https://github.com/sculptormoon).
 
 
