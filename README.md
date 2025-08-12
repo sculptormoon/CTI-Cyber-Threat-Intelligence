@@ -98,9 +98,9 @@ Alright, so I gave a simple example above to show you how to start your investig
 
 In this repository, I’ve included a folder with some CS Falcon queries that might be useful for your investigations. [Querys Falcon](FALCON-queries.md)
 
-Here’s also a repository that contains over 170 tools for querying IPs, hashes, IOCs, groups, and other helpers for your investigations — like tools to identify APT groups, blockchain tracking, and more... 🔗 [Repositorio com ferramentas auxiliares](https://github.com/sculptormoon/blue-team-auxiliary)
+Here’s also a repository that contains over 170 tools for querying IPs, hashes, IOCs, groups, and other helpers for your investigations — like tools to identify APT groups, blockchain tracking, and more... 🔗 [Repository with auxiliary tools](https://github.com/sculptormoon/blue-team-auxiliary)
 
-🔗 [Confira este repositorio sobre Threat Intelligence](https://github.com/sculptormoon/Threat-Intelligence)
+🔗 [Check out this repository about Threat Intelligence](https://github.com/sculptormoon/Threat-Intelligence)
 
 Well, on my profile, there are several repositories that might be useful for your investigations, including ones focused on malware analysis and others.
 
