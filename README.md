@@ -18,27 +18,25 @@ This example reinforces a vital lesson for anyone working in Threat Hunting: the
 
 Here are some questions I like to ask myself when investigating incidents to collect and analyze information:
 
-Who?
+## Who?
 Name, username, or ID
-
 Responsible party — for example, after identifying the attack behavior, try to understand if it belongs to a known threat group
 
-When?
+## When?
 Date/time the threat was identified, and after analysis, try to find the start date. Sometimes you discover it today, but the exploitation has been going on for years.
-
 Were there other correlated events from the start date until you identified it?
 
-Where?
+## Where?
 Identifying the internal host is super important because there are many variables here. Sometimes you might be investigating a host that’s part of a production line, which are often highly vulnerable due to legacy environments. Or maybe it’s a host where employees have free access and everyone uses it, opening the door to possibilities like insider threats. Or it could even be a host used for pentesting. Knowing the host helps you understand its importance. In a compromised environment, one of the things you want is to isolate the host so the attacker loses access and you can do forensic analysis. But if it’s a critical host, you might not be able to isolate it. So knowing what kind of host it is and where it is helps you understand how far your actions can go — how deep into the host and infrastructure you can respond.
 
 Identifying the attacker’s host is also important — for example, knowing their domain, IP, and location.
 
-Why?
+## Why?
 What’s the motivation? (Financial gain, espionage, hacktivism)
 
 Is this asset valuable to the attacker? Understanding if the asset is valuable is very important. You need to know what information is inside that asset and its importance within the environment. I’ve worked on cases where analyzing the attacker’s behavior made it clear that the device wasn’t that important, and the attacker had other devices under control in the environment. So they were just burning one device, not caring if they lost access to it because it wasn’t valuable — and the attacker knew this too. Spotting this is important because based on the attacker’s behavior, you can tell if they’re just sacrificing that device to gather info.
 
-How?
+## How?
 What attack vector was used? (Malware, phishing, RDP)
 
 What technique was applied? (Lateral movement? Data exfiltration?)
