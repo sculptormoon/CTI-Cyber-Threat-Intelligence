@@ -1,42 +1,49 @@
-# Cyber Threat Intelligence
+  # Cyber Threat Intelligence
 
-Bom, durante a minha carreira, uma das perguntas que mais sou abordado é sobre questões de CTI. Já tem algum tempo que penso em criar um conteúdo sobre isso, mas sempre que começo a escrever sobre, fica grande demais, porque CTI é um assunto muito complexo e não existe fórmula mágica para ser um bom profissional de Threat Hunting. Posso dizer que atuar com Threat Hunting significa estar sempre, sempre estudando e se aperfeiçoando a cada segundo. Às vezes, antes de dormir, começo a me questionar sobre certos incidentes, sobre como poderia ter feito algo diferente, ou me pego pensando no Threat Hunting proativo, imaginando como possivelmente vou encontrar uma ameaça que ainda não foi encontrada. Começo a montar situações na minha cabeça como um quebra-cabeça e refletir sobre elas.
 
-Atuar com Hunting é entender que você tem que estar sempre atualizado, sempre estudando, para que possa estar andando lado a lado com as ameaças. Mas, durante a minha carreira, aprendi que dificilmente você estará exatamente lado a lado. Se estiver apenas alguns passos atrás da ameaça, isso já lhe tornará um grande profissional. Estudar sobre ameaças é fundamental para que você não fique muitos passos distante do atacante.
+So, throughout my career, one of the questions I get asked the most is about CTI stuff. I've been thinking for a while about creating some content on this, but every time I start writing, it gets way too long because CTI is a really complex topic, and there’s no magic formula to be a great Threat Hunting pro.
 
-Quanto mais próximo você estiver das ameaças, mais claramente poderá vê-las. vou dar um exemplo sobre uma ameaça de espionagem sofisticada que afetou dispositivos de segurança, especificamente os firewalls Cisco ASA.
+I can say that working with Threat Hunting means you’re always, always studying and improving every second. Sometimes, right before going to sleep, I start questioning certain incidents, wondering if I could have done something differently. Or I catch myself thinking about proactive Threat Hunting — imagining how I might spot a threat that no one’s found yet. I start piecing together scenarios in my head like a puzzle and reflecting on them.
 
-Esses dispositivos são responsáveis por proteger redes governamentais e corporativas, funcionando como barreiras de segurança importantes. No entanto, uma campanha chamada ArcaneDoor, detectada em 2023, mostrou como hackers patrocinados por estados conseguiram explorar duas vulnerabilidades zero-day nesses firewalls para invadir múltiplas redes governamentais globalmente. Esses atacantes conseguiram executar códigos maliciosos nos próprios dispositivos de segurança, espionar o tráfego da rede, roubar dados e manter acesso persistente não apenas por meio de técnicas de software, mas também implantando um pequeno componente de hardware (um tiny chip) diretamente na placa dos firewalls, o que permitiu que o controle malicioso sobrevivesse mesmo após reinicializações e atualizações do sistema.
+Doing Hunting means knowing you have to stay updated and keep learning to walk side by side with threats. But honestly, in my experience, you rarely are exactly side by side. If you’re just a few steps behind the threat, that already makes you a great professional. Studying threats is key so you don’t fall too far behind the attacker.
+
+The closer you are to the threats, the clearer you’ll see them. Let me give you an example of a sophisticated espionage threat that hit security devices, specifically Cisco ASA firewalls.
+
+These devices protect government and corporate networks, acting like major security barriers. But in 2023, a campaign called ArcaneDoor showed how state-sponsored hackers exploited two zero-day vulnerabilities in these firewalls to breach multiple government networks worldwide. These attackers managed to run malicious code directly on the security devices, spy on network traffic, steal data, and maintain persistent access not just with software tricks, but also by implanting a tiny hardware component—a small chip—right on the firewalls’ circuit boards. This allowed their control to survive even after system reboots and updates.
 
 <img width="870" height="643" alt="{EA4BCFC2-FDD4-4788-A8A0-19902A89B078}" src="https://github.com/user-attachments/assets/bfcac78f-1cd1-4202-a2f5-0ba1306ccec9" />
 
 
-Esse exemplo reforça uma lição vital para quem atua com Threat Hunting: quanto mais próximo você estiver das ameaças, mais rápido e de forma proativa poderá identificar e remediar ataques desse nível de sofisticação. Entender as técnicas, vulnerabilidades e comportamentos da espionagem permite antecipar ações e reduzir significativamente o impacto nos ambientes protegidos. Estar sempre um passo atrás da ameaça, ao invés de muitos passos, é o que diferencia um bom profissional.
+This example reinforces a vital lesson for anyone working in Threat Hunting: the closer you are to the threats, the faster and more proactively you can identify and remediate attacks of this level of sophistication. Understanding espionage techniques, vulnerabilities, and behaviors allows you to anticipate actions and significantly reduce the impact on protected environments. Staying just one step behind the threat — instead of many — is what makes a good professional stand out.
 
-Algumas das perguntas que gosto de me fazer em alguns incidentes para coletar e analisar
-### Quem?
-- Nome, usuario ou ID
-- Responsavél como por exemplo após identificar o tipo de comportamento do ataque entender se pertence a algum grupo de ameaça conhecido
+Here are some questions I like to ask myself when investigating incidents to collect and analyze information:
 
-### Quando?
-- Data/hora da identificação da ameaça e após a analise tentar identificar a data de inicio, pois as vezes você pode ter descoberto na data de hoje, porem já faz mais de 2 anos que a ameaça se encontra lá
-- Houve outros eventos correlacionados desde a data de inicio até a data que você identificou?
+Who?
+Name, username, or ID
 
-### Onde?
-- Identificar o Host interno é algo muito importante pois a varias variaveis para essa situação pois as vezes pode ser que você esteja investigando um host que por exemplo é um host de linha de produção que normalmente são host que são extremamente vulneraveis por serem de ambiente legado ou as vezes é um host onde os funcionarios tem livre acesso e todo mundo usa o que abre porta para varias possibilidades como um insider, ou até mesmo trata-se de um host utilizado para pentest, identificar o host é algo importnate pois isso faz com que você também possa saber a importancia daquele host, pois em um ambiente comprometido uma das coisas que você vai querer é isolar o host para que o atacante perca o acesso e possa realizar a pericia e se o host se tratar de um host muito critico você não poderá isolar o host, então saber que tipo de host é e onde está é algo importante, assim você pode saber até onde suas ações podem ir, podem ir dentro do host e até onde sua infraestrutura está comprometida.
-- Indetificar o host do Atacante também é algo importante por exemplo saber o dominio do atacante IP e localização.
+Responsible party — for example, after identifying the attack behavior, try to understand if it belongs to a known threat group
 
-### Por que?
-- Qual a motivação? (Financeira, espionagem, hacktivismo)
-- Esse ativo é valioso para o atacante? entender se o ativo é valioso para o atacante é algo muito importante entender quais as informações que a dentro daquele ativo e sua importancia dentro do ambiente, pois já atuei em casos que ao analisar o comportamento do atacante ficava claro que o dispositivo não tinha tanta importancia e ele tinha outros dispositivos em seu comando dentro do ambiente, então ele estava apenas queimando um dispositivo dentro do ambiente e não via problema em perder acesso aquele dispositivo pois aquele dispositivo não era tão valioso e o mesmo havia identificado isso também, isso ocorre e conseguir identificar isso é importante pois baseado no comportamento do atacante você consegue identificar se o mesmo está apenas queimando aquele dispositivo para coletar informações.
+When?
+Date/time the threat was identified, and after analysis, try to find the start date. Sometimes you discover it today, but the exploitation has been going on for years.
 
+Were there other correlated events from the start date until you identified it?
 
-### Como?
-- Qual vetor de ataque foi usado? (malware, phishing, rdp)
-- Qual técnica foi aplicada? (movimentação lateral?, exfiltração?)
+Where?
+Identifying the internal host is super important because there are many variables here. Sometimes you might be investigating a host that’s part of a production line, which are often highly vulnerable due to legacy environments. Or maybe it’s a host where employees have free access and everyone uses it, opening the door to possibilities like insider threats. Or it could even be a host used for pentesting. Knowing the host helps you understand its importance. In a compromised environment, one of the things you want is to isolate the host so the attacker loses access and you can do forensic analysis. But if it’s a critical host, you might not be able to isolate it. So knowing what kind of host it is and where it is helps you understand how far your actions can go — how deep into the host and infrastructure you can respond.
 
+Identifying the attacker’s host is also important — for example, knowing their domain, IP, and location.
 
-Bom então vamos dar a situação que estamos com um incidente em mãos mas não temos o usuario que fez isso, pois uma coisa comum em situações de um ataque é o escalonamento de privilegio e bom você viu o incidente e após analisar viu que tudo está sendo feito pelo usuario root, bom já um dos EDRs mais usados no mundo é o Falcon, vamos dar um exemplo que estamos em um ambiente que utiliza Falcon então eu gosto de iniciar com uma query para analisar os ultimos logons feitos no host
+Why?
+What’s the motivation? (Financial gain, espionage, hacktivism)
+
+Is this asset valuable to the attacker? Understanding if the asset is valuable is very important. You need to know what information is inside that asset and its importance within the environment. I’ve worked on cases where analyzing the attacker’s behavior made it clear that the device wasn’t that important, and the attacker had other devices under control in the environment. So they were just burning one device, not caring if they lost access to it because it wasn’t valuable — and the attacker knew this too. Spotting this is important because based on the attacker’s behavior, you can tell if they’re just sacrificing that device to gather info.
+
+How?
+What attack vector was used? (Malware, phishing, RDP)
+
+What technique was applied? (Lateral movement? Data exfiltration?)
+
+Alright, now let’s say you have an incident but you don’t know the user who did it. A common thing in attacks is privilege escalation. So, you check the incident and see that everything is being done by the root user. One of the most used EDRs worldwide is Falcon. Let’s say we’re in an environment using Falcon — I like to start with a query to check the last logons on the host.
 
 ## Logons
 ```text
@@ -47,7 +54,7 @@ Bom então vamos dar a situação que estamos com um incidente em mãos mas não
 | aid=~match(file="aid_master_main.csv", column=[aid])
 ```
 
-Bom após analisar os Logons e ter feito a coleta dos mesmo gosto de analisar as commandlines
+So, after analyzing the logons and collecting the data, I like to check out the command lines next
 
 ## Host Linux - Last commands removing other tools from path (+clean)
 ```text
@@ -59,9 +66,12 @@ Bom após analisar os Logons e ter feito a coleta dos mesmo gosto de analisar as
 | table([@timestamp, UserName, ImageFileName, CommandLine, SHA256HashData, #event_simpleName], limit=1000)
 ```
 
-Bom após analisar as commandlines muitas vezes estaremos munidos de informações, e agora teremos de fazer o filtro e separar quais informações são relevantes ou não, por isso em minha query eu já as vezes descarto alguns usuarios, como por exemplo em minha query acima descartei o user zabbix, mas você deve levar em consideração que o fato disso é apenas para que o filtro fique mais limpo, mas o que lhe garante que o user "zabbix" não tenha sido comprometido? então você deve ter muito cuidado ao aplicar filtros.
+So, after analyzing the command lines, we’ll often have a bunch of information. Now it’s time to filter and separate what’s relevant from what’s not. That’s why in my query, sometimes I exclude certain users — like in the example above where I filtered out the user “zabbix.” But you have to keep in mind that this is just to keep the filter cleaner.
 
-Outra coisa que gosto de fazer é validar as comunicações do host que estou investigando com ambientes externos para isso uso a seguinte query
+What guarantees that the “zabbix” user hasn’t been compromised? So, you really need to be careful when applying filters
+
+
+Another thing I like to do is validate the communications of the host I’m investigating with external environments. For that, I use the following query
 
 ## Connections to External Addresses
 ```text
@@ -72,7 +82,7 @@ Outra coisa que gosto de fazer é validar as comunicações do host que estou in
 | table([ComputerName, LocalAddressIP4, LocalPort, RemoteAddressIP4, RemotePort, @timestamp], limit=1000)
 ```
 
-Então digamos que bom tenho o IP em mãos que foi o ator malicioso e tenho as execuções aplicadas e eu quero ver todas as ações daquele IP no Host que foi o alvo então usarei uma das querys abaixo
+So, let’s say I have the IP in hand — the malicious actor’s IP — and I have the executed commands. Now I want to see all the actions from that IP on the target host, so I’ll use one of the queries below
 
 ## Activities of an IP on the Host
 ```text
@@ -86,18 +96,19 @@ Então digamos que bom tenho o IP em mãos que foi o ator malicioso e tenho as e
 | table(fields = [ComputerName, #event_simpleName, ContextBaseFileName, RemoteIP, RemotePort, LocalIP, LocalPort, ConnectionDirection, @timestamp])
 ```
 
-Bom então dei um exemplo simples acima para que você saiba como iniciar sua investigação sobre um caso, mas cada caso tem um nivel de complexibilidade e alguns mais complexibilidade outros menos, alguns podem ser resolvidos em apenas algumas horas alguns podem levar dias ou meses, e sua corrida é contra o tempo.
+Alright, so I gave a simple example above to show you how to start your investigation on a case. But every case has its own level of complexity — some are more complex, others less. Some can be solved in just a few hours, while others might take days or even months. And your race is always against the clock.
 
-Neste repositorio deixei um pasta onde tem algumas querys do CS Falcon que podem ser uteis em suas investigações [Querys Falcon](FALCON-queries.md)
+In this repository, I’ve included a folder with some CS Falcon queries that might be useful for your investigations. [Querys Falcon](FALCON-queries.md)
 
-Aqui também vai um repositorio que contem mais de 170 ferramentas para consultas de IPs, Hash, IOC, grupos e outros auxiliares nas suas investigações como auxiliares para identificar grupos APT, ou rastreamento de blockchain etc... 🔗 [Repositorio com ferramentas auxiliares](https://github.com/sculptormoon/blue-team-auxiliary)
+Here’s also a repository that contains over 170 tools for querying IPs, hashes, IOCs, groups, and other helpers for your investigations — like tools to identify APT groups, blockchain tracking, and more... 🔗 [Repositorio com ferramentas auxiliares](https://github.com/sculptormoon/blue-team-auxiliary)
 
 🔗 [Confira este repositorio sobre Threat Intelligence](https://github.com/sculptormoon/Threat-Intelligence)
 
-Bom em meu perfil a diversos repositorio que podem ser uteis em suas investigações como repositorios voltados a analise de malware e outros.
+Well, on my profile, there are several repositories that might be useful for your investigations, including ones focused on malware analysis and others.
 
-Esse repositorio trata-se de um pequeno contexto sobre CTI, pois como informei lá em cima CTI é um assunto complexo e para você ser um bom profissional de CTI deve dominar varias tecnicas como engenharia reversa, técnicas de forense, conhecimento profundo sobre metodologias de ataque, comprensão sobre questões comportamentais voltadas a ataque e espionagem, então espero que esse repositorio possa lhe ajudar a se guiar para se tornar um bom analista de CTI.
+This repository gives a small overview of CTI because, like I mentioned earlier, CTI is a complex subject. To be a good CTI professional, you need to master various skills like reverse engineering, forensic techniques, deep knowledge of attack methodologies, and understanding behavioral aspects related to attacks and espionage.
 
+So, I hope this repository helps guide you on your journey to becoming a great CTI analyst.
 
 ## License
 
