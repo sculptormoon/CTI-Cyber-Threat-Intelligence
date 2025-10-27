@@ -41,7 +41,7 @@ What attack vector was used? (Malware, phishing, RDP)
 
 What technique was applied? (Lateral movement? Data exfiltration?)
 
-Alright, now let’s say you have an incident but you don’t know the user who did it. A common thing in attacks is privilege escalation. So, you check the incident and see that everything is being done by the root user. One of the most used EDRs worldwide is Falcon. Let’s say we’re in an environment using Falcon — I like to start with a query to check the last logons on the host.
+Alright, now let’s say you have an incident but you don’t know the user who did it. A common thing in attacks is privilege escalation. So, you check the incident and see that everything is being done by the root user. One of the most used EDRs worldwide is Falcon. Let’s say we’re in an environment using Falcon I like to start with a query to check the last logons on the host.
 
 ## Logons
 ```text
