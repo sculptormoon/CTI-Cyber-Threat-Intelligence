@@ -3,7 +3,7 @@
 
 So, throughout my career, one of the questions I get asked the most is about CTI stuff. I've been thinking for a while about creating some content on this, but every time I start writing, it gets way too long because CTI is a really complex topic, and there’s no magic formula to be a great Threat Hunting pro.
 
-I can say that working with Threat Hunting means you’re always, always studying and improving every second. Sometimes, right before going to sleep, I start questioning certain incidents, wondering if I could have done something differently. Or I catch myself thinking about proactive Threat Hunting — imagining how I might spot a threat that no one’s found yet. I start piecing together scenarios in my head like a puzzle and reflecting on them.
+I can say that working with Threat Hunting means you’re always, always studying and improving every second. Sometimes, right before going to sleep, I start questioning certain incidents, wondering if I could have done something differently. Or I catch myself thinking about proactive Threat Hunting imagining how I might spot a threat that no one’s found yet. I start piecing together scenarios in my head like a puzzle and reflecting on them.
 
 Doing Hunting means knowing you have to stay updated and keep learning to walk side by side with threats. But honestly, in my experience, you rarely are exactly side by side. If you’re just a few steps behind the threat, that already makes you a great professional. Studying threats is key so you don’t fall too far behind the attacker.
 
@@ -14,20 +14,20 @@ These devices protect government and corporate networks, acting like major secur
 <img width="870" height="643" alt="{EA4BCFC2-FDD4-4788-A8A0-19902A89B078}" src="https://github.com/user-attachments/assets/bfcac78f-1cd1-4202-a2f5-0ba1306ccec9" />
 
 
-This example reinforces a vital lesson for anyone working in Threat Hunting: the closer you are to the threats, the faster and more proactively you can identify and remediate attacks of this level of sophistication. Understanding espionage techniques, vulnerabilities, and behaviors allows you to anticipate actions and significantly reduce the impact on protected environments. Staying just one step behind the threat — instead of many — is what makes a good professional stand out.
+This example reinforces a vital lesson for anyone working in Threat Hunting: the closer you are to the threats, the faster and more proactively you can identify and remediate attacks of this level of sophistication. Understanding espionage techniques, vulnerabilities, and behaviors allows you to anticipate actions and significantly reduce the impact on protected environments. Staying just one step behind the threat instead of many is what makes a good professional stand out.
 
 Here are some questions I like to ask myself when investigating incidents to collect and analyze information:
 
 ## Who?
 Name, username, or ID
-Responsible party — for example, after identifying the attack behavior, try to understand if it belongs to a known threat group
+Responsible party for example, after identifying the attack behavior, try to understand if it belongs to a known threat group
 
 ## When?
 Date/time the threat was identified, and after analysis, try to find the start date. Sometimes you discover it today, but the exploitation has been going on for years.
 Were there other correlated events from the start date until you identified it?
 
 ## Where?
-Identifying the internal host is super important because there are many variables here. Sometimes you might be investigating a host that’s part of a production line, which are often highly vulnerable due to legacy environments. Or maybe it’s a host where employees have free access and everyone uses it, opening the door to possibilities like insider threats. Or it could even be a host used for pentesting. Knowing the host helps you understand its importance. In a compromised environment, one of the things you want is to isolate the host so the attacker loses access and you can do forensic analysis. But if it’s a critical host, you might not be able to isolate it. So knowing what kind of host it is and where it is helps you understand how far your actions can go — how deep into the host and infrastructure you can respond.
+Identifying the internal host is super important because there are many variables here. Sometimes you might be investigating a host that’s part of a production line, which are often highly vulnerable due to legacy environments. Or maybe it’s a host where employees have free access and everyone uses it, opening the door to possibilities like insider threats. Or it could even be a host used for pentesting. Knowing the host helps you understand its importance. In a compromised environment, one of the things you want is to isolate the host so the attacker loses access and you can do forensic analysis. But if it’s a critical host, you might not be able to isolate it. So knowing what kind of host it is and where it is helps you understand how far your actions can go how deep into the host and infrastructure you can respond.
 
 Identifying the attacker’s host is also important — for example, knowing their domain, IP, and location.
 
