@@ -29,7 +29,7 @@ Were there other correlated events from the start date until you identified it?
 ## Where?
 Identifying the internal host is super important because there are many variables here. Sometimes you might be investigating a host that’s part of a production line, which are often highly vulnerable due to legacy environments. Or maybe it’s a host where employees have free access and everyone uses it, opening the door to possibilities like insider threats. Or it could even be a host used for pentesting. Knowing the host helps you understand its importance. In a compromised environment, one of the things you want is to isolate the host so the attacker loses access and you can do forensic analysis. But if it’s a critical host, you might not be able to isolate it. So knowing what kind of host it is and where it is helps you understand how far your actions can go how deep into the host and infrastructure you can respond.
 
-Identifying the attacker’s host is also important — for example, knowing their domain, IP, and location.
+Identifying the attacker’s host is also important for example, knowing their domain, IP, and location.
 
 ## Why?
 What’s the motivation? (Financial gain, espionage, hacktivism)
