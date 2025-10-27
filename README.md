@@ -34,7 +34,7 @@ Identifying the attacker’s host is also important for example, knowing their d
 ## Why?
 What’s the motivation? (Financial gain, espionage, hacktivism)
 
-Is this asset valuable to the attacker? Understanding if the asset is valuable is very important. You need to know what information is inside that asset and its importance within the environment. I’ve worked on cases where analyzing the attacker’s behavior made it clear that the device wasn’t that important, and the attacker had other devices under control in the environment. So they were just burning one device, not caring if they lost access to it because it wasn’t valuable — and the attacker knew this too. Spotting this is important because based on the attacker’s behavior, you can tell if they’re just sacrificing that device to gather info.
+Is this asset valuable to the attacker? Understanding if the asset is valuable is very important. You need to know what information is inside that asset and its importance within the environment. I’ve worked on cases where analyzing the attacker’s behavior made it clear that the device wasn’t that important, and the attacker had other devices under control in the environment. So they were just burning one device, not caring if they lost access to it because it wasn’t valuable and the attacker knew this too. Spotting this is important because based on the attacker’s behavior, you can tell if they’re just sacrificing that device to gather info.
 
 ## How?
 What attack vector was used? (Malware, phishing, RDP)
