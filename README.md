@@ -9,7 +9,7 @@ Doing Hunting means knowing you have to stay updated and keep learning to walk s
 
 The closer you are to the threats, the clearer you’ll see them. Let me give you an example of a sophisticated espionage threat that hit security devices, specifically Cisco ASA firewalls.
 
-These devices protect government and corporate networks, acting like major security barriers. But in 2023, a campaign called ArcaneDoor showed how state-sponsored hackers exploited two zero-day vulnerabilities in these firewalls to breach multiple government networks worldwide. These attackers managed to run malicious code directly on the security devices, spy on network traffic, steal data, and maintain persistent access not just with software tricks, but also by implanting a tiny hardware component—a small chip—right on the firewalls’ circuit boards. This allowed their control to survive even after system reboots and updates.
+These devices protect government and corporate networks, acting like major security barriers. But in 2023, a campaign called ArcaneDoor showed how state sponsored hackers exploited two zero day vulnerabilities in these firewalls to breach multiple government networks worldwide. These attackers managed to run malicious code directly on the security devices, spy on network traffic, steal data, and maintain persistent access not just with software tricks, but also by implanting a tiny hardware component—a small chip—right on the firewalls’ circuit boards. This allowed their control to survive even after system reboots and updates.
 
 <img width="870" height="643" alt="{EA4BCFC2-FDD4-4788-A8A0-19902A89B078}" src="https://github.com/user-attachments/assets/bfcac78f-1cd1-4202-a2f5-0ba1306ccec9" />
 
