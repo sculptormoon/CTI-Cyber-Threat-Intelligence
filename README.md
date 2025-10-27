@@ -80,7 +80,7 @@ Another thing I like to do is validate the communications of the host I’m inve
 | table([ComputerName, LocalAddressIP4, LocalPort, RemoteAddressIP4, RemotePort, @timestamp], limit=1000)
 ```
 
-So, let’s say I have the IP in hand — the malicious actor’s IP — and I have the executed commands. Now I want to see all the actions from that IP on the target host, so I’ll use one of the queries below
+So, let’s say I have the IP in hand the malicious actor’s IP and I have the executed commands. Now I want to see all the actions from that IP on the target host, so I’ll use one of the queries below
 
 ## Activities of an IP on the Host
 ```text
